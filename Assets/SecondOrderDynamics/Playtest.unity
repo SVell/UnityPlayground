@@ -422,6 +422,7 @@ MonoBehaviour:
   z: 0.5
   r: 0
   followTarget: {fileID: 651746105}
+  tiltStrength: 20
 --- !u!1 &1747164918
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateMode: 1
-  f: 5
+  f: 3
   z: 0.5
   r: -2
   followTarget: {fileID: 651746105}

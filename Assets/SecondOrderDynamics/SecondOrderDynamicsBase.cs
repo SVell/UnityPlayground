@@ -8,7 +8,7 @@ namespace SVell.SecondOrderDynamics
 
         [Space]
         
-        [Range(0, 10)]
+        [Range(0.1f, 10)]
         [Tooltip("Frequency - speed in which system will response to the input")]
         [SerializeField]
         private float f = 1;
@@ -53,5 +53,10 @@ namespace SVell.SecondOrderDynamics
         }
 
         protected abstract void Compute(float T);
+
+        private void OnValidate()
+        {
+            SecondOrderDynamics = new SecondOrderDynamics(f, z, r, followTarget.position);
+        }
     }
 }
