@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace SVell.Movement
+namespace SVell.SecondOrderDynamics
 {
     public enum UpdateMode
     {
@@ -9,49 +9,13 @@ namespace SVell.Movement
         FixedUpdate,
         LateUpdate
     }
-    public class SecondOrderDynamics : MonoBehaviour
+    public class SecondOrderDynamics
     {
-        [SerializeField] private UpdateMode updateMode;
-
-        [Space] 
-        [Range(0, 10)]
-        [SerializeField] private float f = 5;
-        [Range(0,5)]
-        [SerializeField] private float z = 1;
-        [Range(-1, 1)]
-        [SerializeField] private float r = 0;
-
-        [SerializeField] private Transform followTarget;
-
         private Vector3 _xp;
         private Vector3 _y, _yd;
-        private float _w, _z, _d, _k1, _k2, _k3;
+        private readonly float _w, _z, _d, _k1, _k2, _k3;
 
-        private void Update()
-        {
-            if (updateMode == UpdateMode.Update)
-            {
-                transform.position = ComputePosition(Time.deltaTime, followTarget.position, Vector3.zero);
-            }
-        }
-
-        private void FixedUpdate()
-        {
-            if (updateMode == UpdateMode.FixedUpdate)
-            {
-                transform.position = ComputePosition(Time.fixedDeltaTime, followTarget.position, Vector3.zero);
-            }
-        }
-
-        private void LateUpdate()
-        {
-            if (updateMode == UpdateMode.LateUpdate)
-            {
-                transform.position = ComputePosition(Time.deltaTime, followTarget.position, Vector3.zero);
-            }
-        }
-
-        private void UpdateValues()
+        public SecondOrderDynamics(float f, float z, float r, Vector3 x0)
         {
             _w = 2 * Mathf.PI * f;
             _z = z;
@@ -60,12 +24,12 @@ namespace SVell.Movement
             _k2 = 1 / (_w * _w);
             _k3 = r * z / _w;
 
-            _xp = followTarget.position;
-            _y = _xp;
-            _yd = _xp;
+            _xp = x0;
+            _y = x0;
+            _yd = x0;
         }
 
-        private Vector3 ComputePosition(float T, Vector3 x, Vector3 xd)
+        public Vector3 ComputePosition(float T, Vector3 x, Vector3 xd)
         {
             if (xd == Vector3.zero)
             {
@@ -96,10 +60,15 @@ namespace SVell.Movement
 
             return _y;
         }
-
-        private void OnValidate()
+        
+        public Vector3 GetSignedEulerAngles(Vector3 angles)
         {
-            UpdateValues();
+            Vector3 signedAngles = Vector3.zero;
+            for (int i = 0; i < 3; i++)
+            {
+                signedAngles[i] = (angles[i] + 180f) % 360f - 180f;
+            }
+            return signedAngles;
         }
     }
 }
