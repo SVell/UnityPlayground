@@ -29,6 +29,12 @@ namespace SVell.SecondOrderDynamics
             _yd = x0;
         }
 
+        public void SetPosition(Vector3 y)
+        {
+            _y = y;
+            _xp = y;
+        }
+
         public Vector3 ComputePosition(float T, Vector3 x, Vector3 xd)
         {
             if (xd == Vector3.zero)
