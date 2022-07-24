@@ -29,12 +29,6 @@ namespace SVell.SecondOrderDynamics
             _yd = x0;
         }
 
-        public void SetPosition(Vector3 y)
-        {
-            _y = y;
-            _xp = y;
-        }
-
         public Vector3 ComputePosition(float T, Vector3 x, Vector3 xd)
         {
             if (xd == Vector3.zero)
@@ -65,16 +59,6 @@ namespace SVell.SecondOrderDynamics
             _yd += T * (x + _k3 * xd - _y - k1Stable * _yd) / k2Stable;
 
             return _y;
-        }
-        
-        public Vector3 GetSignedEulerAngles(Vector3 angles)
-        {
-            Vector3 signedAngles = Vector3.zero;
-            for (int i = 0; i < 3; i++)
-            {
-                signedAngles[i] = (angles[i] + 180f) % 360f - 180f;
-            }
-            return signedAngles;
         }
     }
 }

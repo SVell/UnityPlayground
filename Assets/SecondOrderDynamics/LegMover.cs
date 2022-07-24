@@ -29,14 +29,14 @@ namespace SVell.SecondOrderDynamics
             footOffset.y = transform.position.y;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             transform.position = _currentPosition;
             
             Ray ray = new Ray(raycastPos.position, Vector3.down);
             if (Physics.Raycast(ray, out var info, whatIsGround))
             {
-                if (Vector3.Distance(_newPosition, info.point) > stepDistance  && !otherFoot.IsMoving() && _lerp >= 1)
+                if (Vector3.Distance(_newPosition, info.point) > stepDistance  && !otherFoot.IsMoving())
                 {
                     _lerp = 0;
                     _newPosition = info.point;
@@ -49,7 +49,7 @@ namespace SVell.SecondOrderDynamics
                 footPosition.y += Mathf.Sin(_lerp * Mathf.PI) * stepHeight + footOffset.y;
 
                 _currentPosition = footPosition;
-                _lerp += Time.deltaTime * speed;
+                _lerp += Time.fixedDeltaTime * speed;
             }
             else
             {
