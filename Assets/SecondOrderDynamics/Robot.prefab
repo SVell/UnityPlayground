@@ -713,7 +713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5025510947148763127}
   m_LocalRotation: {x: -0.33296973, y: -0.8617915, z: 0.13792057, w: 0.35696572}
-  m_LocalPosition: {x: 0.4369, y: 0.6665, z: -0.4369}
+  m_LocalPosition: {x: 0.337, y: 0.6665, z: -0.387}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -732,9 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f44b731629376c48b0475614c819bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDistance: 0.35
-  stepHeight: 0.3
-  speed: 20
+  stepDistance: 0.2
+  stepHeight: 0.35
+  speed: 10
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -785,9 +785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f44b731629376c48b0475614c819bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDistance: 0.35
-  stepHeight: 0.3
-  speed: 20
+  stepDistance: 0.2
+  stepHeight: 0.35
+  speed: 10
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -939,7 +939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5025510947767498402}
   m_LocalRotation: {x: 0.13792057, y: 0.35696572, z: 0.33296973, w: 0.8617915}
-  m_LocalPosition: {x: -0.438, y: 0.667, z: 0.438}
+  m_LocalPosition: {x: -0.342, y: 0.667, z: 0.385}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -958,9 +958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f44b731629376c48b0475614c819bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDistance: 0.35
-  stepHeight: 0.3
-  speed: 20
+  stepDistance: 0.2
+  stepHeight: 0.35
+  speed: 10
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -1363,9 +1363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f44b731629376c48b0475614c819bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDistance: 0.35
-  stepHeight: 0.3
-  speed: 20
+  stepDistance: 0.2
+  stepHeight: 0.35
+  speed: 10
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64

@@ -9,22 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72db607fb085e984ba1603fc0a942441, type: 3}
-  m_Name: Bonus Level Factory
+  m_Script: {fileID: 11500000, guid: 9c194acc7b3be2e47a32b75ff4531982, type: 3}
+  m_Name: Bonus Enemy Factory
   m_EditorClassIdentifier: 
-  bonusSkeleton:
-    Prefab: {fileID: 8781244275751925667, guid: 723c2229589d175478369806112afff0,
+  skeleton:
+    Prefab: {fileID: -9014820790959102501, guid: bad974266c56ec34981df9d4eb3a0897,
       type: 3}
     Speed: 1
     Health: 10
     WanderRadius: 5
-  bonusZombie:
-    Prefab: {fileID: -9014820790959102501, guid: bad974266c56ec34981df9d4eb3a0897,
+  zombie:
+    Prefab: {fileID: 8781244275751925667, guid: 723c2229589d175478369806112afff0,
       type: 3}
     Speed: 0.5
     Health: 20
     WanderRadius: 5
-  bonusElemental:
+  elemental:
     Prefab: {fileID: -6815716166898775096, guid: 4d4715732a00f6e46a03c44572232156,
       type: 3}
     Speed: 0.3
